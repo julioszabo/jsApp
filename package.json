@@ -1,0 +1,9 @@
+{
+  "name": "jsApp",
+  "version": "0.0.1",
+  "author": "Julio Szabo <szabojulio@gmail.com>",
+  "description": "A simple Test Application",
+  "dependencies": {
+  },
+  "license": "MIT"
+}
