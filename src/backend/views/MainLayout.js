@@ -2,12 +2,11 @@ define([
 	"templates",
 	"views/Menu"
 	],
-function(t){
+function(t, Menu){
 	return Backbone.Marionette.Layout.extend({
 		initialize: function(options){
-			/*this.menuView = new Menu({
-				delegate: this
-			});*/
+			//this.menuView = ;
+			//this.menuView.render();
 			//this.collection = options.collection;
 		},
 		regions: {
@@ -28,7 +27,9 @@ function(t){
 			}
 		},
 		onShow: function(){
-			this.menu.show(new Menu({}));
+			this.menu.show(new Menu({
+				delegate: this
+			}));
 		}
 	});
 });

@@ -32,7 +32,7 @@ module.exports = function(grunt) {
   				options: {
   					prettify: true,
   					processName: function(longPath){
-                    return longPath.substr(19);
+                    return longPath.substr(22);
                 	}
   				},
   				files: {
