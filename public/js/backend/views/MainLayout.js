@@ -10,7 +10,7 @@ function(t, Menu){
 			//this.collection = options.collection;
 		},
 		regions: {
-			menu: ".menu",
+			menu: ".js-menu",
 			content: ".content"
 		},
 		template: function(){
@@ -27,9 +27,25 @@ function(t, Menu){
 			}
 		},
 		onShow: function(){
+			var collection = new Backbone.Collection();
+			collection.add([
+					{menuName: "Home", active: true},
+					{menuName: "Clients"},
+					{menuName: "Others"}
+				]);
 			this.menu.show(new Menu({
-				delegate: this
+				delegate: this,
+				collection: collection
 			}));
+		},
+		handleMenuClick: function(menuName){
+			alert(menuName);
+			switch(menuName){
+				case "": 
+					break;
+				default: 
+					break;
+			}
 		}
 	});
 });
