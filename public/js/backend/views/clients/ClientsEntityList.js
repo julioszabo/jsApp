@@ -1,7 +1,7 @@
 define([
 	"templates"
 	],
-	function(t, Clients){
+	function(t){
 		var ClientGridRowView = Backbone.Marionette.ItemView.extend({
 				template: function(serialized){
 					return window.JST["clients/clientEntityRow.html"](serialized);

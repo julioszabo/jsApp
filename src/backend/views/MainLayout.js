@@ -1,8 +1,9 @@
 define([
 	"templates",
-	"views/Menu"
+	"views/Menu",
+	"views/clients/ClientLayout"
 	],
-function(t, Menu){
+function(t, Menu, ClientLayout){
 	return Backbone.Marionette.Layout.extend({
 		initialize: function(options){
 			//this.menuView = ;
@@ -15,16 +16,6 @@ function(t, Menu){
 		},
 		template: function(){
 			return window.JST["layout/main.html"];
-		},
-		load: function(view){
-			switch(view){
-				case "ClientsList":
-					this.content.show({});
-					break;
-				case "OtherList":
-					this.content.show({});
-					break;
-			}
 		},
 		onShow: function(){
 			var collection = new Backbone.Collection();
@@ -39,12 +30,16 @@ function(t, Menu){
 			}));
 		},
 		handleMenuClick: function(menuName){
-			alert(menuName);
+			var layout;
 			switch(menuName){
-				case "": 
+				case "Clients":
+					layout = new ClientLayout();
 					break;
 				default: 
 					break;
+			}
+			if(layout){
+				this.content.show(layout);
 			}
 		}
 	});
